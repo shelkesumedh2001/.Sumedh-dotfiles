@@ -19,11 +19,15 @@ vim.cmd([[
 packer.startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
-
+    
+    -- Copilot
+    use "github/copilot.vim"
+    -- Auto close brackets
+   -- use 'm4xshen/autoclose.nvim'
 	-- Dashboard is a nice start screen for nvim
 	use("glepnir/dashboard-nvim")
 
-    use { 'tribela/vim-transparent', config = function() vim.cmd('Transparent') end }
+--    use { 'tribela/vim-transparent', config = function() vim.cmd('Transparent') end }
 
 	-- Telescope
 	use({
