@@ -27,7 +27,14 @@ return require('packer').startup(function()
 		--end
 	})
 
-  
+   -- Auto close brackets 
+    use {'m4xshen/autoclose.nvim', config = function()
+        require('nvim-autoclose').setup()
+         vim.g.AutoClose_onStartup = 1
+ 	end	
+ 	}
+
+
     --Tokyonight theme
   use({
         'folke/tokyonight.nvim',
