@@ -13,8 +13,7 @@ require("sumedh.maps") -- Keymaps
 require("sumedh.plugins") -- Plugins
 require("sumedh.bootstrap") -- Packer Auto-Installer
 require("sumedh.cpp_template") --Template for C++ Files
-
-
+--require("dashboard").setup{} --Dashboard
 -- Load Packer
 return require('packer').startup(function()
   -- Packer configuration code goes here
@@ -26,14 +25,6 @@ return require('packer').startup(function()
 				--vim.cmd('colorscheme rose-pine')
 		--end
 	})
-
-   -- Auto close brackets 
-    use {'m4xshen/autoclose.nvim', config = function()
-        require('nvim-autoclose').setup()
-         vim.g.AutoClose_onStartup = 1
- 	end	
- 	}
-
 
     --Tokyonight theme
   use({
