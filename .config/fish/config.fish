@@ -21,8 +21,11 @@ set VISUAL "emacsclient -c -a emacs"              # $VISUAL use Emacs in GUI mod
 ### SET MANPAGER
 ### Uncomment only one of these!
 
+### "less" as manpager
+set -x MANPAGER "less"
+
 ### "bat" as manpager
-set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+#set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 ### "vim" as manpager
 # set -x MANPAGER '/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
@@ -229,12 +232,12 @@ alias doomdoctor="~/.emacs.d/bin/doom doctor"
 alias doomupgrade="~/.emacs.d/bin/doom upgrade"
 alias doompurge="~/.emacs.d/bin/doom purge"
 
-# Changing "ls" to "exa"
-alias la='exa -al --color=always --group-directories-first' # my preferred listing
-alias ls='exa -a --color=always --group-directories-first'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first'  # long format
-alias lt='exa -aT --color=always --group-directories-first' # tree listing
-alias l.='exa -a | egrep "^\."'
+# Changing "ls" to "eza"
+alias la='eza -al --color=always --group-directories-first' # my preferred listing
+alias ls='eza -a --color=always --group-directories-first'  # all files and dirs
+alias ll='eza -l --color=always --group-directories-first'  # long format
+alias lt='eza -aT --color=always --group-directories-first' # tree listing
+alias l.='eza -a | egrep "^\."'
 
 # pacman and yay
 alias sumedhh='yay -Syu'

@@ -18,7 +18,7 @@ ts.setup({
 	},
 	--ensure_installed = { "org", "lua" }, -- Or run :TSUpdate org
   -- A list of parser names, or "all"
-  ensure_installed = { "cpp", "vimdoc", "javascript", "typescript", "c", "lua", "rust" },
+  ensure_installed = { "org", "cpp", "vimdoc", "javascript", "typescript", "c", "lua", "rust" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,

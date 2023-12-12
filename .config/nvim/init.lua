@@ -13,7 +13,7 @@ require("sumedh.maps") -- Keymaps
 require("sumedh.plugins") -- Plugins
 require("sumedh.bootstrap") -- Packer Auto-Installer
 require("sumedh.cpp_template") --Template for C++ Files
---require("dashboard").setup{} --Dashboard
+--require("dashboard") --Dashboard
 -- Load Packer
 return require('packer').startup(function()
   -- Packer configuration code goes here

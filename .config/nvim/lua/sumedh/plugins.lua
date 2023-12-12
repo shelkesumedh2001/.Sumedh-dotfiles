@@ -22,13 +22,17 @@ packer.startup(function(use)
     
     -- Copilot
     use "github/copilot.vim"
-    -- Auto close brackets
-   -- use 'm4xshen/autoclose.nvim'
 	-- Dashboard is a nice start screen for nvim
-	use("glepnir/dashboard-nvim")
-
---    use { 'tribela/vim-transparent', config = function() vim.cmd('Transparent') end }
-
+use {
+  'glepnir/dashboard-nvim',
+--  event = 'VimEnter',
+  config = function()
+    require('dashboard').setup {
+      -- config
+    }
+  end,
+  requires = {'nvim-tree/nvim-web-devicons'}
+}
 	-- Telescope
 	use({
 		"nvim-telescope/telescope.nvim",
@@ -74,7 +78,7 @@ packer.startup(function(use)
 
 	-- Other stuff --
 	use("frazrepo/vim-rainbow")
-
+    use("ThePrimeagen/vim-be-good")
 	if packer_bootstrap then
 		packer.sync()
 	end
