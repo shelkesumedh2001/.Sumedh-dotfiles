@@ -19,7 +19,12 @@ local vim = vim
 -- Uncomment just ONE of the following colorschemes!
 --local ok, _ = pcall(vim.cmd, 'colorscheme rose-pine')
 
-local ok, _ = pcall(vim.cmd, 'colorscheme tokyonight-storm')
+--local ok, _ = pcall(vim.cmd, 'colorscheme catppuccin-frappe')
+local ok, _ = pcall(vim.cmd, 'colorscheme catppuccin-macchiato')
+--local ok, _ = pcall(vim.cmd, 'colorscheme catppuccin-mocha')
+--local ok, _ = pcall(vim.cmd, 'colorscheme rose-pine')
+--local ok, _ = pcall(vim.cmd, 'colorscheme catppuccin-latte')
+--local ok, _ = pcall(vim.cmd, 'colorscheme tokyonight-storm')
 --local ok, _ = pcall(vim.cmd, 'colorscheme base16-dracula')
 -- local ok, _ = pcall(vim.cmd, 'colorscheme base16-gruvbox-dark-medium')
 --local ok, _ = pcall(vim.cmd, 'colorscheme base16-monokai')

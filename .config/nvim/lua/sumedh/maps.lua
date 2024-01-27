@@ -21,7 +21,7 @@ map("n", "<leader>sl", "<CMD>SessionLoad<CR>")
 -- Keybindings for telescope
 map("n", "<leader>fr", "<CMD>Telescope oldfiles<CR>")
 map("n", "<leader>ff", "<CMD>Telescope find_files hidden=true<CR>")
---map("n", "<leader>fb", "<CMD>Telescope file_browser<CR>")
+map("n", "<leader>fb", "<CMD>Telescope file_browser<CR>")
 map("n", "<leader>fw", "<CMD>Telescope live_grep<CR>")
 map("n", "<leader>ht", "<CMD>Telescope colorscheme<CR>")
 
@@ -40,3 +40,11 @@ vim.api.nvim_set_keymap('n', '<F10>', ':!g++ -o %< % <CR> :term ./%< <CR> i', { 
 
 -- Keybinding to open a terminal buffer
 map("n", "<F12>", ":term<CR>")
+
+--Copilot
+--vim.api.nvim_set_keymap('i', '<Tab>', '<Cmd>lua require"copilot".complete()<CR>', { noremap = true, silent = true })
+
+vim.g.copilot_assume_mapped = true
+
+
+--vim.api.nvim_set_keymap("i", "<TAB>", 'copilot#Accept("<CR>")', { silent = true, expr = true })

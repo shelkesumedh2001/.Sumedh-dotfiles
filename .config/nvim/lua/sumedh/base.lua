@@ -20,7 +20,7 @@ o.timeoutlen = 500
 o.updatetime = 200
 
 -- Number of screen lines to keep above and below the cursor
-o.scrolloff = 8
+o.scrolloff = 999
 
 -- Better editor UI
 o.number = true
@@ -34,7 +34,7 @@ o.expandtab = true
 o.smarttab = true
 o.cindent = true
 o.autoindent = true
-o.wrap = true
+o.wrap = false
 o.textwidth = 300
 o.tabstop = 4
 o.shiftwidth = 4
@@ -43,6 +43,11 @@ o.list = true
 o.listchars = "trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂"
 -- o.listchars = 'eol:¬,space:·,lead: ,trail:·,nbsp:◇,tab:→-,extends:▸,precedes:◂,multispace:···⬝,leadmultispace:│   ,'
 -- o.formatoptions = 'qrn1'
+o.virtualedit = "block"
+o.inccommand = "split"
+o.ignorecase = true
+
+
 
 -- Makes neovim and host OS clipboard play nicely with each other
 o.clipboard = "unnamedplus"
