@@ -139,7 +139,7 @@ alias la='eza -al --color=always --group-directories-first' # my preferred listi
 alias ls='eza -a --color=always --group-directories-first'  # all files and dirs
 alias ll='eza -l --color=always --group-directories-first'  # long format
 alias lt='eza -aT --color=always --group-directories-first' # tree listing
-alias l.='eza -a | egrep "^\."'
+alias l.='eza -a | grep -E "^\."'
 
 # pacman and yay
 alias sumedhh='sudo yay -Syu'                    # update standard packages and aur on yay

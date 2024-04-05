@@ -237,7 +237,7 @@ alias la='eza -al --color=always --group-directories-first' # my preferred listi
 alias ls='eza -a --color=always --group-directories-first'  # all files and dirs
 alias ll='eza -l --color=always --group-directories-first'  # long format
 alias lt='eza -aT --color=always --group-directories-first' # tree listing
-alias l.='eza -a | egrep "^\."'
+alias l.='eza -a | grep -E "^\."'
 
 # pacman and yay
 alias sumedhh='yay -Syu'
@@ -266,7 +266,7 @@ alias fgrep='fgrep --color=auto'
 # confirm before overwriting something
 alias cp="cp -i"
 alias mv='mv -i'
-alias rm='rm -i'
+#alias rm='rm -i'
 
 # adding flags
 alias df='df -h'                          # human-readable sizes
@@ -356,7 +356,7 @@ alias dtoscopy='[ -d ~/.config ] || mkdir ~/.config && cp -Rf ~/.config ~/.confi
 alias dtosbackup='cp -Rf /etc/dtos ~/dtos-backup-(date +%Y.%m.%d-%H.%M.%S)'
 
 ### RANDOM COLOR SCRIPT ###
-# Get this script from my GitLab: gitlab.com/dwt1/shell-color-scripts
+# Get this script from GitLab: gitlab.com/dwt1/shell-color-scripts
 # Or install it from the Arch User Repository: shell-color-scripts
 colorscript random
 

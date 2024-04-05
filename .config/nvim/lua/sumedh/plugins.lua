@@ -85,29 +85,13 @@ packer.startup(function(use)
     use("rose-pine/neovim")
     use{"catppuccin/nvim", as = "catppuccin" }
 
-
     -- Other stuff --
     use("frazrepo/vim-rainbow")
     use("ThePrimeagen/vim-be-good")
 
-    if packer_bootstrap then
-        packer.sync()
-    end
-
     -- C++ Debugger
     use 'mfussenegger/nvim-dap'
-    -- use { 'tribela/vim-transparent' }
-    -- nvim-treesitter
-    -- use {
-    --     'nvim-treesitter/nvim-treesitter',
-    --     run = ':TSUpdate'
-    -- }
-    -- coc.nvim
-    use {
-        'neoclide/coc.nvim',
-        branch = 'release'
-    }
-
+    
     -- C++ syntax plugin
     use 'octol/vim-cpp-enhanced-highlight'
 
@@ -130,7 +114,13 @@ packer.startup(function(use)
             })
         end
     }
-
+    
+    use {
+        "williamboman/mason.nvim",
+        config = function()
+            require("mason").setup()
+        end
+    }
     -- File Explorer
     use {
         'kyazdani42/nvim-tree.lua',
@@ -150,8 +140,7 @@ packer.startup(function(use)
         },
     }
 
-
-    -- Set up LSP
-    local lsp = require('lspconfig')
-    lsp.clangd.setup({})
+    if packer_bootstrap then
+        packer.sync()
+    end
 end)
