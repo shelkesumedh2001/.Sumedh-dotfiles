@@ -114,13 +114,29 @@ packer.startup(function(use)
             })
         end
     }
-    
+
     use {
         "williamboman/mason.nvim",
         config = function()
             require("mason").setup()
         end
     }
+
+    use {
+        "williamboman/mason-lspconfig.nvim",
+        dependencies = { "williamboman/mason.nvim" },
+        config = function()
+            require("mason-lspconfig").setup()
+            require("mason-lspconfig").setup_handlers ({
+               function (server_name)
+                require("lspconfig")[server_name].setup ({})
+               end,
+    })
+    end
+    }
+
+    use ("neovim/nvim-lspconfig")
+
     -- File Explorer
     use {
         'kyazdani42/nvim-tree.lua',

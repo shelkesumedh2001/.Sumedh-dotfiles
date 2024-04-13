@@ -45,9 +45,6 @@ o.listchars = "trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂"
 -- o.formatoptions = 'qrn1'
 o.virtualedit = "block"
 o.inccommand = "split"
-o.ignorecase = true
-
-
 
 -- Makes neovim and host OS clipboard play nicely with each other
 o.clipboard = "unnamedplus"
