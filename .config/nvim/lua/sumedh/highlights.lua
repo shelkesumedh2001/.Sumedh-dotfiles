@@ -20,7 +20,7 @@ local vim = vim
 --local ok, _ = pcall(vim.cmd, 'colorscheme rose-pine')
 
 --local ok, _ = pcall(vim.cmd, 'colorscheme catppuccin-frappe')
-local ok, _ = pcall(vim.cmd, 'colorscheme catppuccin-macchiato')
+local ok, _ = pcall(vim.cmd, 'colorscheme base16-catppuccin-macchiato')
 --local ok, _ = pcall(vim.cmd, 'colorscheme catppuccin-mocha')
 --local ok, _ = pcall(vim.cmd, 'colorscheme rose-pine')
 --local ok, _ = pcall(vim.cmd, 'colorscheme catppuccin-latte')

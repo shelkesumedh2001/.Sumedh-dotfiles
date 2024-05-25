@@ -7,18 +7,16 @@
 --                                                                                                             /____/   
 ------------------------------------------------------------------------------------------------------------------------
 
+require("sumedh.bootstrap") -- Packer Auto-Installer
 require("sumedh.base") -- General Settings
 require("sumedh.highlights") -- Colourscheme and other highlights
 require("sumedh.maps") -- Keymaps
 require("sumedh.plugins") -- Plugins
-require("sumedh.bootstrap") -- Packer Auto-Installer
 require("sumedh.cpp_template") --Template for C++ Files
+require('lualine').setup()
 
--- Load Packer
-return require('packer').startup(function()
-  -- Packer configuration code goes here
+vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
+vim.cmd("hi NonText guibg=NONE ctermbg=NONE")
+vim.cmd("TransparentEnable")
+vim.cmd("colorscheme catppuccin-macchiato")
 
-vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
-vim.cmd('hi NonText guibg=NONE ctermbg=NONE')
-
-end)

@@ -248,11 +248,6 @@ alias dtosbackup='cp -Rf /etc/dtos ~/dtos-backup-$(date +%Y.%m.%d-%H.%M.%S)'
 # Or install it from the Arch User Repository: shell-color-scripts
 colorscript random
 
-### BASH INSULTER ###
-if [ -f /etc/bash.command-not-found ]; then
-    . /etc/bash.command-not-found
-fi
-
 ### SETTING THE STARSHIP PROMPT ###
 eval "$(starship init bash)"
 
