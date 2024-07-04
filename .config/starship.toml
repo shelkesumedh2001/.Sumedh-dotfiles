@@ -1,3 +1,4 @@
+
 # Get editor completions based on the config scheme
 "$schema" = 'https://starship.rs/config-schema.json'
 
@@ -46,7 +47,7 @@ symbol = " "
 [dart]
 symbol = " "
 [docker_context]
-symbol = " "
+symbol = "🐳 "  # Added a whale symbol for Docker
 format = "via [$symbol$context]($style) "
 style = "blue bold"
 only_with_files = true
@@ -58,13 +59,13 @@ symbol = " "
 [elm]
 symbol = " "
 [git_branch]
-symbol = "🐕"
+symbol = "🐕 "
 [golang]
 symbol = " "
 [hg_branch]
 symbol = " "
 [java]
-symbol = " "
+symbol = "☕ "   # Added a coffee cup symbol for Java
 [julia]
 symbol = " "
 [memory_usage]
@@ -78,26 +79,26 @@ symbol = " "
 [perl]
 symbol = " "
 [php]
-symbol = " "
+symbol = "🐘 "  # Added an elephant symbol for PHP
 [python]
-symbol = " "
-format = 'via [$symbol]python ([$version] )([$virtualenv] )]($style)'
+symbol = "🐍 " # Added a snake symbol for Python
+format = 'via ${symbol}python (\($version\))(\($virtualenv\))'  # Corrected formatting
 style = "bold yellow"
 pyenv_prefix = "venv "
 python_binary = ["./venv/bin/python", "python", "python3", "python2"]
 detect_extensions = ["py"]
 version_format = "v$raw"
 [ruby]
-symbol = " "
+symbol = "💎 "  # Added a gem symbol for Ruby
 [rust]
-symbol = " "
+symbol = "🦀 "   # Added a crab symbol for Rust
 [scala]
 symbol = " "
 [shlvl]
 symbol = " "
 [swift]
-symbol = "ﯣ "
+symbol = "🐦 "  # Added a bird symbol for Swift
 [nodejs]
-format = "via [ Node.js $version](bold green) "
+format = "via [Node.js $version](bold green) "
 detect_files = ["package.json", ".node-version"]
 detect_folders = ["node_modules"]
