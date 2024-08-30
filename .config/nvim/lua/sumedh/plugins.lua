@@ -4,11 +4,40 @@
 
 
 require("lazy").setup({
-
+    {
+        "nvim-neorg/neorg",
+        lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+        version = "*", -- Pin Neorg to the latest stable release
+        config = true,
+    },
     -- Copilot
-    "github/copilot.vim",
-
-    -- Dashboard is a nice start screen for nvim
+         {
+      'zbirenbaum/copilot.lua',
+      cmd = 'Copilot',
+      event = 'InsertEnter',
+      config = function()
+        require('copilot').setup({
+          suggestion = {
+            enabled = true,
+            auto_trigger = true,
+            debounce = 75,
+            keymap = {
+              accept = "<Tab>",
+              accept_word = false,
+              accept_line = false,
+              next = "<M-]>",
+              prev = "<M-[>",
+              dismiss = "<C-]>",
+            },
+          },
+          filetypes = {
+                        '*',
+          },
+          panel = { enabled = true },
+        })
+      end,
+    },
+-- Dashboard is a nice start screen for nvim
     {
         "glepnir/dashboard-nvim",
         dependencies = {"nvim-tree/nvim-web-devicons"},

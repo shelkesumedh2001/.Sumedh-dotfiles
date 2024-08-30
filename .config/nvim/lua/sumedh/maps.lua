@@ -5,7 +5,6 @@
 -------------------------------------------------
 -- KEYBINDINGS
 -------------------------------------------------
-
 local function map(m, k, v)
 	vim.keymap.set(m, k, v, { silent = true })
 end
@@ -40,9 +39,8 @@ vim.api.nvim_set_keymap('n', '<F10>', ':!g++ -o %< % <CR> :term ./%< <CR> i', { 
 map("n", "<F12>", ":term<CR>")
 
 --Copilot
---vim.api.nvim_set_keymap('i', '<Tab>', '<Cmd>lua require"copilot".complete()<CR>', { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('i', '<C-J>', '<Cmd>lua require"copilot".complete()<CR>', { noremap = false, silent = false })
 
 vim.g.copilot_assume_mapped = true
 
-
-vim.api.nvim_set_keymap("i", "<TAB>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+--vim.api.nvim_set_keymap("i", "<TAB>", 'copilot#Accept("<CR>")', { expr = true })
