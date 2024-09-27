@@ -246,3 +246,4 @@ colorscript random
 eval "$(starship init bash)"
 
 
+. "$HOME/.cargo/env"
