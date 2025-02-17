@@ -194,8 +194,8 @@ c.tabs.show = 'always'
 
 # Setting default page for when opening new tabs or new windows with
 # commands like :open -t and :open -w .
-c.url.default_page = 'https://sumedh.codes/'
-c.url.start_pages = 'https://sumedh.codes/'
+c.url.default_page = 'https://www.startpage.com/'
+c.url.start_pages = 'https://www.startpage.com/'
 
 # Search engines which can be used via the address bar.  Maps a search
 # engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
@@ -394,3 +394,16 @@ config.bind(',dr', 'config-cycle content.user_stylesheets ~/.config/qutebrowser/
 config.bind(',gr', 'config-cycle content.user_stylesheets ~/.config/qutebrowser/solarized-everything-css/css/gruvbox/gruvbox-all-sites.css ""')
 config.bind(',sd', 'config-cycle content.user_stylesheets ~/.config/qutebrowser/solarized-everything-css/css/solarized-dark/solarized-dark-all-sites.css ""')
 config.bind(',sl', 'config-cycle content.user_stylesheets ~/.config/qutebrowser/solarized-everything-css/css/solarized-light/solarized-light-all-sites.css ""')
+
+# Enable hardware acceleration by disabling software rendering
+c.qt.force_software_rendering = "none"
+
+# Use these arguments for hardware acceleration
+c.backend = "webengine"
+c.qt.args = ["--enable-gpu-rasterization"]
+
+c.qt.args += [
+    "--enable-accelerated-video-decode",
+    "--ignore-gpu-blocklist",
+    "--enable-native-gpu-memory-buffers"
+]

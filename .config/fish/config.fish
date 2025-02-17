@@ -318,6 +318,7 @@ alias playavi='vlc *.avi'
 alias playmov='vlc *.mov'
 alias playmp4='vlc *.mp4'
 
+alias mysql="mariadb"
 # youtube-dl
 alias yta-aac="youtube-dl --extract-audio --audio-format aac "
 alias yta-best="youtube-dl --extract-audio --audio-format best "
@@ -357,3 +358,12 @@ colorscript random
 
 ### SETTING THE STARSHIP PROMPT ###
 starship init fish | source
+
+# Pyenv configuration
+set -gx PYENV_ROOT $HOME/.pyenv
+set -gx PATH $PYENV_ROOT/bin $PATH
+
+if type -q pyenv
+    status --is-interactive; and pyenv init --path | source
+    status --is-interactive; and pyenv init - | source
+end

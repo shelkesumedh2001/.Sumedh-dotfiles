@@ -41,6 +41,20 @@ map("n", "<F12>", ":term<CR>")
 --Copilot
 --vim.api.nvim_set_keymap('i', '<C-J>', '<Cmd>lua require"copilot".complete()<CR>', { noremap = false, silent = false })
 
-vim.g.copilot_assume_mapped = true
+--vim.g.copilot_assume_mapped = true
 
 --vim.api.nvim_set_keymap("i", "<TAB>", 'copilot#Accept("<CR>")', { expr = true })
+
+-- Copilot tab behavior
+-- Copilot mappings
+vim.api.nvim_set_keymap("i", "<C-l>", "<CMD>lua require('copilot.suggestion').accept()<CR>", { silent = true, noremap = false })
+
+-- Custom tab behavior
+vim.api.nvim_set_keymap("i", "<Tab>", 'pumvisible() ? "<C-n>" : v:lua.check_back_space() ? "<TAB>" : "<CMD>lua require(\'copilot.suggestion\').accept()<CR>"', { expr = true, noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<S-Tab>", 'pumvisible() ? "<C-p>" : "<C-h>"', { expr = true, noremap = true })
+
+-- Check for backspace
+function _G.check_back_space()
+    local col = vim.fn.col('.') - 1
+    return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s')
+end
