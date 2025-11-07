@@ -42,7 +42,8 @@ local ok, _ = pcall(vim.cmd, 'colorscheme base16-catppuccin-macchiato')
 
 -- Highlight the region on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-	group = num_au,
+--	group = num_au,
+	group = vim.api.nvim_create_augroup("YankHighlight", { clear = true }),
 	callback = function()
 		vim.highlight.on_yank({ higroup = "Visual", timeout = 120 })
 	end,

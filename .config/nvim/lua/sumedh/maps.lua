@@ -47,14 +47,29 @@ map("n", "<F12>", ":term<CR>")
 
 -- Copilot tab behavior
 -- Copilot mappings
-vim.api.nvim_set_keymap("i", "<C-l>", "<CMD>lua require('copilot.suggestion').accept()<CR>", { silent = true, noremap = false })
+--vim.api.nvim_set_keymap("i", "<C-l>", "<CMD>lua require('copilot.suggestion').accept()<CR>", { silent = true, noremap = false })
+
+-- Copilot - Accept with Ctrl+L
+--vim.api.nvim_set_keymap("i", "<C-l>", "<CMD>lua require('copilot.suggestion').accept()<CR>", { silent = true, noremap = true })
+
+-- Tab behavior: Accept Copilot if suggestion exists, otherwise insert tab
+vim.keymap.set('i', '<Tab>', function()
+  if require('copilot.suggestion').is_visible() then
+    require('copilot.suggestion').accept()
+  else
+    return '<Tab>'
+  end
+end, { expr = true, silent = true })
+
+-- Shift-Tab for going back
+vim.keymap.set('i', '<S-Tab>', '<C-d>', { noremap = true, silent = true })
 
 -- Custom tab behavior
-vim.api.nvim_set_keymap("i", "<Tab>", 'pumvisible() ? "<C-n>" : v:lua.check_back_space() ? "<TAB>" : "<CMD>lua require(\'copilot.suggestion\').accept()<CR>"', { expr = true, noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<S-Tab>", 'pumvisible() ? "<C-p>" : "<C-h>"', { expr = true, noremap = true })
+--vim.api.nvim_set_keymap("i", "<Tab>", 'pumvisible() ? "<C-n>" : v:lua.check_back_space() ? "<TAB>" : "<CMD>lua require(\'copilot.suggestion\').accept()<CR>"', { expr = true, noremap = true, silent = true })
+--vim.api.nvim_set_keymap("i", "<S-Tab>", 'pumvisible() ? "<C-p>" : "<C-h>"', { expr = true, noremap = true })
 
 -- Check for backspace
-function _G.check_back_space()
-    local col = vim.fn.col('.') - 1
-    return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s')
-end
+--function _G.check_back_space()
+--    local col = vim.fn.col('.') - 1
+--    return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s')
+--end

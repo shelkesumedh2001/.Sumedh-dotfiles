@@ -196,6 +196,12 @@ alias newtag='git tag -a'
 # get error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
 
+# ssh into blog vm
+
+alias blogssh="ssh -i ~/.ssh/blog blog@35.244.7.101"
+
+
+
 # gpg encryption
 # verify signature for isos
 alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"

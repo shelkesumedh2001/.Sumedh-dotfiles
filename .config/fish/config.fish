@@ -233,11 +233,11 @@ alias doomupgrade="~/.emacs.d/bin/doom upgrade"
 alias doompurge="~/.emacs.d/bin/doom purge"
 
 # Changing "ls" to "eza"
-alias la='eza -al --color=always --group-directories-first' # my preferred listing
-alias ls='eza -a --color=always --group-directories-first'  # all files and dirs
-alias ll='eza -l --color=always --group-directories-first'  # long format
-alias lt='eza -aT --color=always --group-directories-first' # tree listing
-alias l.='eza -a | grep -E "^\."'
+alias la='eza -al --icons --color=always --group-directories-first' # my preferred listing
+alias ls='eza -a --icons --color=always --group-directories-first'  # all files and dirs
+alias ll='eza -l --icons --color=always --group-directories-first'  # long format
+alias lt='eza -aT --icons --color=always --group-directories-first' # tree listing
+alias l.='eza -a --icons | grep -E "^\."'
 
 # pacman and yay
 alias sumedhh='yay -Syu'
@@ -268,6 +268,10 @@ alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
 alias cat='bat'
+
+#ssh into blog
+alias blogssh="ssh -i ~/.ssh/blog blog@35.244.7.101"
+
 
 # adding flags
 alias df='df -h'                          # human-readable sizes
@@ -341,7 +345,7 @@ alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
 # termbin
 alias tb="nc termbin.com 9999"
-alias btop="btop --utf-force"
+alias btop="btop --force-utf"
 # the terminal rickroll
 alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
 
