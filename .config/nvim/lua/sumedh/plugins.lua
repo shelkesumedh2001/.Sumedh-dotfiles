@@ -190,7 +190,7 @@ require("lazy").setup({
         build = ":TSUpdate",
         config = function()
             require("nvim-treesitter.configs").setup({
-                ensure_installed = { "cpp", "c", "lua", "vim", "python", "javascript", "typescript", "bash" },
+                ensure_installed = { "cpp", "c", "lua", "vim", "python", "javascript", "typescript", "bash", "dart" },
                 auto_install = true,
                 highlight = {
                     enable = true,
@@ -287,7 +287,7 @@ require("lazy").setup({
     dependencies = { "williamboman/mason.nvim", "neovim/nvim-lspconfig" },
     config = function()
         require("mason-lspconfig").setup({
-            ensure_installed = { "clangd", "lua_ls", "pyright" },
+            ensure_installed = { "clangd", "lua_ls", "pyright", "dartls" },
             automatic_installation = true,
         })
         
@@ -311,6 +311,7 @@ require("lazy").setup({
         vim.lsp.enable('clangd')
         vim.lsp.enable('lua_ls')
         vim.lsp.enable('pyright')
+        vim.lsp.enable('dartls')
     end
 },
               -- Transparency
@@ -333,5 +334,27 @@ require("lazy").setup({
         'windwp/nvim-autopairs',
         event = "InsertEnter",
         config = true
+    },
+
+    -- Flutter Development
+    {
+        'nvim-flutter/flutter-tools.nvim',
+        lazy = false,
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'stevearc/dressing.nvim',
+        },
+        config = function()
+            require("flutter-tools").setup {
+                lsp = {
+                    color = {
+                        enabled = true,
+                    },
+                },
+                widget_guides = {
+                    enabled = true,
+                },
+            }
+        end
     },
 })

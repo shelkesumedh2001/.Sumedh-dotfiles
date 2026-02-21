@@ -263,3 +263,15 @@ if command -v pyenv >/dev/null 2>&1; then
     eval "$(pyenv init --path)"
     eval "$(pyenv init -)"
 fi
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/flutter/bin:$PATH"
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+export PATH=$ANDROID_HOME/emulator:$PATH
+
+# npm global packages
+export PATH="$HOME/.npm-global/bin:$PATH"
+
+# Chrome for Flutter web development
+export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable

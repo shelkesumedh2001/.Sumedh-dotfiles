@@ -371,3 +371,17 @@ if type -q pyenv
     status --is-interactive; and pyenv init --path | source
     status --is-interactive; and pyenv init - | source
 end
+set -gx PATH $HOME/.local/bin $PATH
+
+# Flutter and Android Development
+set -gx PATH $HOME/flutter/bin $PATH
+set -gx ANDROID_HOME $HOME/Android/Sdk
+set -gx PATH $ANDROID_HOME/cmdline-tools/latest/bin $PATH
+set -gx PATH $ANDROID_HOME/platform-tools $PATH
+set -gx PATH $ANDROID_HOME/emulator $PATH
+
+# npm global packages
+set -gx PATH $HOME/.npm-global/bin $PATH
+
+# Chrome for Flutter web development
+set -gx CHROME_EXECUTABLE /usr/bin/google-chrome-stable
